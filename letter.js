@@ -1,6 +1,7 @@
 const envelope = document.getElementById("envelope");
 const paper = document.getElementById("paper");
 const text = document.getElementById("text");
+const music = document.getElementById("bgMusic");
 
 const message = `น้องขอโทษนะ...
 
@@ -24,6 +25,10 @@ let index = 0;
 
 // คลิกซองจดหมาย
 envelope.onclick = () => {
+
+    music.play().catch(err => {
+        console.log("Autoplay blocked:", err);
+    });
 
     gsap.to(envelope,{
         scale:0,
